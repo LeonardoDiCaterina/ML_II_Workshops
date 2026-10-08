@@ -130,11 +130,11 @@ Check the **Actions** tab on your GitHub repository. The autograder will run and
 
 <!-- AUTOGRADER_GRADES_START -->
 
-**Total Progress:** `100 / 1600 pts` across 16 workshops.
+**Total Progress:** `0 / 1600 pts` across 16 workshops.
 
 | # | Workshop | Topic Focus | Grade | Attempts | Status | Last Run |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|
-| **00** | [`workshop_00_revising`](workshop_00_revising/) | Foundations: Synthetic Panel, PCA/UMAP, Pipelines | **100 / 100** | 2 | 🟢 Passed | 2026-10-08 08:44 UTC |
+| **00** | [`workshop_00_revising`](workshop_00_revising/) | Foundations: Synthetic Panel, PCA/UMAP, Pipelines | — | 0 | ⚪ Pending | — |
 | **01** | `workshop_01_ts_graphics` | Time Series Graphics: APIs, Datetime Indexing, ACF | — | 0 | ⚪ Pending | — |
 | **02** | `workshop_02_decomposition` | Transformations, Classical & STL Decomposition | — | 0 | ⚪ Pending | — |
 | **03** | `workshop_03_benchmarks` | Benchmarks, Diagnostics & Prediction Intervals | — | 0 | ⚪ Pending | — |

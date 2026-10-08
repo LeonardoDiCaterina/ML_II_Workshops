@@ -11,6 +11,7 @@ dependencies:
   - pandas>=2.1
   - scikit-learn>=1.4
   - umap-learn>=0.5.5
+  - xgboost>=2.0
   - statsmodels>=0.14
   - pytorch>=2.2
   - matplotlib>=3.8

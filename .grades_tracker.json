@@ -2,12 +2,12 @@
   "workshop_00_revising": {
     "num": "00",
     "topic": "Foundations: Synthetic Panel, PCA/UMAP, Pipelines",
-    "score": 100,
-    "passed": 5,
-    "total": 5,
-    "attempts": 2,
-    "status": "\ud83d\udfe2 Passed",
-    "last_run": "2026-10-08 08:44 UTC"
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
   },
   "workshop_01_ts_graphics": {
     "num": "01",
