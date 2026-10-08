@@ -126,6 +126,35 @@ Check the **Actions** tab on your GitHub repository. The autograder will run and
 
 ---
 
+## 📊 Workshop Progress & Grade Tracker
+
+<!-- AUTOGRADER_GRADES_START -->
+
+**Total Progress:** `100 / 1600 pts` across 16 workshops.
+
+| # | Workshop | Topic Focus | Grade | Attempts | Status | Last Run |
+|:---:|:---|:---|:---:|:---:|:---:|:---:|
+| **00** | [`workshop_00_revising`](workshop_00_revising/) | Foundations: Synthetic Panel, PCA/UMAP, Pipelines | **100 / 100** | 2 | 🟢 Passed | 2026-10-08 08:44 UTC |
+| **01** | `workshop_01_ts_graphics` | Time Series Graphics: APIs, Datetime Indexing, ACF | — | 0 | ⚪ Pending | — |
+| **02** | `workshop_02_decomposition` | Transformations, Classical & STL Decomposition | — | 0 | ⚪ Pending | — |
+| **03** | `workshop_03_benchmarks` | Benchmarks, Diagnostics & Prediction Intervals | — | 0 | ⚪ Pending | — |
+| **04** | `workshop_04_evaluation` | Forecast Accuracy Metrics & Walk-Forward CV | — | 0 | ⚪ Pending | — |
+| **05** | `workshop_05_regression` | Time Series Regression & Spurious Correlation | — | 0 | ⚪ Pending | — |
+| **06** | `workshop_06_ets` | Exponential Smoothing & ETS Model Selection | — | 0 | ⚪ Pending | — |
+| **07** | `workshop_07_arima` | Stationarity, Differencing & ARIMA Identification | — | 0 | ⚪ Pending | — |
+| **08** | `workshop_08_advanced_arima` | Seasonal ARIMA, SARIMAX & Fourier Terms | — | 0 | ⚪ Pending | — |
+| **09** | `workshop_09_prophet_garch` | Additive Models (Prophet) & GARCH Volatility | — | 0 | ⚪ Pending | — |
+| **10** | `workshop_10_deep_learning` | Sequence Modeling with PyTorch RNN & LSTM | — | 0 | ⚪ Pending | — |
+| **11** | `workshop_11_transformers` | Temporal Fusion Transformer & Self-Attention | — | 0 | ⚪ Pending | — |
+| **12** | `workshop_12_hierarchical` | Hierarchical Forecasting & MinT Reconciliation | — | 0 | ⚪ Pending | — |
+| **13** | `workshop_13_multivariate` | Vector Autoregression (VAR) & Impulse Response | — | 0 | ⚪ Pending | — |
+| **14** | `workshop_14_practical` | Production Pipelines & Automated Backtesting | — | 0 | ⚪ Pending | — |
+| **15** | `workshop_15_final_project` | Capstone Tournament & Final Submission | — | 0 | ⚪ Pending | — |
+
+<!-- AUTOGRADER_GRADES_END -->
+
+---
+
 ## Instructor Commands (`Makefile`)
 
 - `make scaffold`: Strips instructor solutions into blank student walkthrough notebooks.

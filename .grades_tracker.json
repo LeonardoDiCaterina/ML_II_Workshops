@@ -1,0 +1,162 @@
+{
+  "workshop_00_revising": {
+    "num": "00",
+    "topic": "Foundations: Synthetic Panel, PCA/UMAP, Pipelines",
+    "score": 100,
+    "passed": 5,
+    "total": 5,
+    "attempts": 2,
+    "status": "\ud83d\udfe2 Passed",
+    "last_run": "2026-10-08 08:44 UTC"
+  },
+  "workshop_01_ts_graphics": {
+    "num": "01",
+    "topic": "Time Series Graphics: APIs, Datetime Indexing, ACF",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_02_decomposition": {
+    "num": "02",
+    "topic": "Transformations, Classical & STL Decomposition",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_03_benchmarks": {
+    "num": "03",
+    "topic": "Benchmarks, Diagnostics & Prediction Intervals",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_04_evaluation": {
+    "num": "04",
+    "topic": "Forecast Accuracy Metrics & Walk-Forward CV",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_05_regression": {
+    "num": "05",
+    "topic": "Time Series Regression & Spurious Correlation",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_06_ets": {
+    "num": "06",
+    "topic": "Exponential Smoothing & ETS Model Selection",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_07_arima": {
+    "num": "07",
+    "topic": "Stationarity, Differencing & ARIMA Identification",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_08_advanced_arima": {
+    "num": "08",
+    "topic": "Seasonal ARIMA, SARIMAX & Fourier Terms",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_09_prophet_garch": {
+    "num": "09",
+    "topic": "Additive Models (Prophet) & GARCH Volatility",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_10_deep_learning": {
+    "num": "10",
+    "topic": "Sequence Modeling with PyTorch RNN & LSTM",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_11_transformers": {
+    "num": "11",
+    "topic": "Temporal Fusion Transformer & Self-Attention",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_12_hierarchical": {
+    "num": "12",
+    "topic": "Hierarchical Forecasting & MinT Reconciliation",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_13_multivariate": {
+    "num": "13",
+    "topic": "Vector Autoregression (VAR) & Impulse Response",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_14_practical": {
+    "num": "14",
+    "topic": "Production Pipelines & Automated Backtesting",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  },
+  "workshop_15_final_project": {
+    "num": "15",
+    "topic": "Capstone Tournament & Final Submission",
+    "score": null,
+    "passed": 0,
+    "total": 0,
+    "attempts": 0,
+    "status": "\u26aa Pending",
+    "last_run": "\u2014"
+  }
+}

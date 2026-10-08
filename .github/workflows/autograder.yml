@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: write
+
 jobs:
   grade:
     name: Run Autograding Test Suite
@@ -17,6 +20,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
@@ -29,12 +34,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[test]"
 
-      - name: Run Pytest Autograder
+      - name: Run Pytest Autograder & Update Progress Table
         run: |
           if [ "$GITHUB_REPOSITORY" = "LeonardoDiCaterina/ML_II_Workshops" ]; then
-            echo "Template repository detected. Verifying test suite integrity..."
+            echo "Template repository: verifying tests & initializing progress table..."
             pytest --collect-only
+            python scripts/update_grades_table.py --dry-run
           else
-            echo "Student repository detected. Executing autograder on submission..."
-            pytest -v --tb=short
+            echo "Student repository: evaluating submission & updating grade table..."
+            python scripts/update_grades_table.py
           fi
+
+      - name: Commit and Push Updated README & Grade Tracker
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md .grades_tracker.json
+          git diff --staged --quiet || (git commit -m "chore(autograder): update workshop progress table [skip ci]" && git push)

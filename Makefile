@@ -1,4 +1,4 @@
-.PHONY: help scaffold test test-00 clean env
+.PHONY: help grade scaffold test test-00 clean env
 
 help:
 	@echo "Available commands:"
@@ -7,7 +7,7 @@ help:
 	@echo "  make test-00    - Run Workshop 00 unit tests"
 	@echo "  make clean      - Remove build artifacts, bytecode, and cache folders"
 
-scaffold:
+grade:\n\tpython3 scripts/update_grades_table.py\n\nscaffold:
 	python3 scripts/generate_scaffold.py
 
 test:
