@@ -19,8 +19,9 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4\n        with:\n          fetch-depth: 2
+        uses: actions/checkout@v4
         with:
+          fetch-depth: 2
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python ${{ matrix.python-version }}
