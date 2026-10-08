@@ -1,0 +1,38 @@
+# System & OS
+.DS_Store
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Data artifacts
+data/*.parquet
+data/*.feather
+data/*.sqlite
+
+# =============================================================================
+# INSTRUCTOR MATERIALS & SOLUTIONS (STRICTLY PRIVATE - NEVER COMMIT)
+# =============================================================================
+**/instructor/
+instructor/
+*solution*
+*.solution.*

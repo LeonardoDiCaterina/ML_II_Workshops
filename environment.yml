@@ -1,0 +1,25 @@
+name: ml2_workshops
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.11
+  - pip
+  - numpy>=1.26
+  - scipy>=1.11
+  - pandas>=2.1
+  - scikit-learn>=1.4
+  - umap-learn>=0.5.5
+  - statsmodels>=0.14
+  - pytorch>=2.2
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - jupyterlab>=4.0
+  - ipywidgets>=8.1
+  - pytest>=8.0
+  - nbformat>=5.9
+  - nbclient>=0.10
+  - ipykernel>=6.29
+  - pip:
+    - -e .
