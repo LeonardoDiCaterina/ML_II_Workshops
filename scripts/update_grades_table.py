@@ -3,8 +3,9 @@
 scripts/update_grades_table.py
 
 Automated Grade & Attempt Tracker for Machine Learning II Workshops.
-Runs pytest for each workshop, tracks attempts, calculates grades,
-and automatically updates the progress table in README.md.
+Intelligent Git Diff Detection:
+Only tests workshops and increments attempts if the commit/push diff
+actually modified files inside that specific workshop's directory!
 """
 
 import os
@@ -63,6 +64,42 @@ def save_tracker(tracker):
     with open(TRACKER_FILE, "w", encoding="utf-8") as f:
         json.dump(tracker, f, indent=2)
 
+def get_touched_workshops():
+    """
+    Returns the set of workshop folders touched in the current git diff:
+    - Working tree uncommitted/staged changes
+    - Last commit diff (HEAD~1 -> HEAD)
+    """
+    touched = set()
+
+    # 1. Check working directory changes (unstaged + staged)
+    res_status = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, cwd=str(ROOT_DIR))
+    for line in res_status.stdout.splitlines():
+        parts = line.strip().split()
+        if len(parts) >= 2:
+            path_str = parts[-1]
+            seg = path_str.split("/")
+            if len(seg) > 1 and seg[0].startswith("workshop_"):
+                touched.add(seg[0])
+
+    # 2. Check commit diff (HEAD~1 -> HEAD if available)
+    has_head1 = subprocess.run(["git", "rev-parse", "--verify", "HEAD~1"], capture_output=True, cwd=str(ROOT_DIR)).returncode == 0
+    if has_head1:
+        res_diff = subprocess.run(["git", "diff", "--name-only", "HEAD~1", "HEAD"], capture_output=True, text=True, cwd=str(ROOT_DIR))
+        for line in res_diff.stdout.splitlines():
+            seg = line.strip().split("/")
+            if len(seg) > 1 and seg[0].startswith("workshop_"):
+                touched.add(seg[0])
+    else:
+        # Initial commit fallback: check files in HEAD
+        res_tree = subprocess.run(["git", "ls-tree", "-r", "--name-only", "HEAD"], capture_output=True, text=True, cwd=str(ROOT_DIR))
+        for line in res_tree.stdout.splitlines():
+            seg = line.strip().split("/")
+            if len(seg) > 1 and seg[0].startswith("workshop_"):
+                touched.add(seg[0])
+
+    return touched
+
 def run_workshop_tests(folder):
     test_dir = ROOT_DIR / folder / "tests"
     if not test_dir.exists():
@@ -85,9 +122,18 @@ def run_workshop_tests(folder):
         return None
     return passed, total
 
-def update_all(is_template_dry_run=False):
+def update_all(force_all=False, is_template_dry_run=False):
     tracker = load_tracker()
     now_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    if is_template_dry_run:
+        touched = set()
+    elif force_all:
+        touched = {folder for folder, _, _ in WORKSHOPS if (ROOT_DIR / folder).exists()}
+    else:
+        touched = get_touched_workshops()
+
+    print(f"Workshops touched in current diff: {sorted(list(touched)) if touched else 'None (no workshop files modified)'}")
 
     for folder, num, topic in WORKSHOPS:
         w_path = ROOT_DIR / folder
@@ -100,7 +146,9 @@ def update_all(is_template_dry_run=False):
             "status": "⚪ Pending", "last_run": "—"
         })
 
-        if not is_template_dry_run:
+        # ONLY test and increment if this specific folder was touched!
+        if folder in touched:
+            print(f"  -> Evaluating {folder}...")
             test_res = run_workshop_tests(folder)
             if test_res is not None:
                 passed, total = test_res
@@ -117,6 +165,11 @@ def update_all(is_template_dry_run=False):
                     info["status"] = f"🟡 In Progress ({passed}/{total})"
                 else:
                     info["status"] = f"🔴 Incomplete (0/{total})"
+            else:
+                print(f"     No tests found or test runner returned 0 tests.")
+        else:
+            # Untouched workshop: retain existing attempts, score, status, and last_run!
+            pass
         
         tracker[folder] = info
 
@@ -179,4 +232,5 @@ def update_readme(tracker):
 
 if __name__ == "__main__":
     is_dry_run = "--dry-run" in sys.argv
-    update_all(is_template_dry_run=is_dry_run)
+    force_all = "--all" in sys.argv
+    update_all(force_all=force_all, is_template_dry_run=is_dry_run)
