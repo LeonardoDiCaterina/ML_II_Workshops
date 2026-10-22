@@ -72,6 +72,12 @@ test-03:
 test-solution-03:
 	AUTOGRADE_TARGET=instructor pytest workshop_03_benchmarks/tests/
 
+test-04:
+	pytest workshop_04_evaluation/tests/
+
+test-solution-04:
+	AUTOGRADE_TARGET=instructor pytest workshop_04_evaluation/tests/
+
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 	find . -type d -name ".pytest_cache" -exec rm -rf {} +
