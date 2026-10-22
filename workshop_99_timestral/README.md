@@ -70,35 +70,49 @@ We evaluated `mistralai/Timestral-28M` against our **Workshop 02 Multiplicative 
 
 ---
 
-## 💻 5. Running the Sandbox Locally
+## 💻 5. Environment Setup & Execution Instructions
 
-### Step 1: Environment Setup
-Ensure your dedicated `timestral_env` is active:
+We provide a dedicated conda environment configuration ([`environment.yml`](environment.yml)) and pip requirements file ([`requirements.txt`](requirements.txt)) tailored specifically for this workshop.
+
+### Option A: Using Conda (Recommended)
+
+From within this `workshop_99_timestral/` folder:
+
 ```bash
+# 1. Create the isolated conda environment from environment.yml
+conda env create -f environment.yml
+
+# 2. Activate the environment
 conda activate timestral_env
+
+# 3. Register the Jupyter Kernel for notebook selection
+python -m ipykernel install --user --name timestral_env --display-name "Python 3.11 (Timestral)"
 ```
-*(If you need to install it from scratch, see the environment instructions below).*
+
+### Option B: Using Standard Python Virtual Environment (`venv` + `pip`)
+
+```bash
+# 1. Create and activate venv (Python >= 3.10 required)
+python3 -m venv .venv
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Register the Jupyter Kernel
+python -m ipykernel install --user --name timestral_env --display-name "Python 3.11 (Timestral)"
+```
+
+---
 
 ### Step 2: Run the Benchmark Suite via Terminal
 ```bash
 python run_experiments.py
 ```
-This executes all 4 experiments and refreshes the high-resolution figures in `images/`.
+This executes all 4 benchmark experiments and refreshes the figures in `images/`.
 
-### Step 3: Launch the Interactive Notebook
+### Step 3: Launch the Interactive Playground Notebook
 ```bash
 jupyter lab timestral_playground.ipynb
 ```
-Select the kernel in the top-right corner: **`Python 3.11 (Timestral)`**.
-
----
-
-## ⚙️ Environment Setup Commands
-If creating the environment on a new machine:
-```bash
-conda create -n timestral_env python=3.11 -y
-conda activate timestral_env
-pip install torch torchvision numpy pandas matplotlib scipy statsmodels safetensors huggingface_hub ipykernel
-pip install git+https://github.com/mistralai/timestral.git
-python -m ipykernel install --user --name timestral_env --display-name "Python 3.11 (Timestral)"
-```
+*(In Jupyter Lab, select the kernel in the top-right corner: **`Python 3.11 (Timestral)`**).*
