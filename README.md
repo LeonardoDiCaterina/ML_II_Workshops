@@ -123,6 +123,7 @@ Check the **Actions** tab on your GitHub repository. The autograder will run and
 | **13** | `workshop_13_multivariate` | **Lesson 13**: Vector Autoregressions (VAR), Granger causality, Impulse Response Functions (IRF) | Notebook & Tests |
 | **14** | `workshop_14_practical` | **Lesson 14**: End-to-end production pipelines, automated backtesting, monitoring & drift | Notebook & Tests |
 | **15** | `workshop_15_final_project` | **Lesson 15**: Capstone forecasting tournament & comprehensive modeling report | Project Submission |
+| **99** | [`workshop_99_timestral`](workshop_99_timestral/) | **Advanced Sandbox**: Time Series Foundation Models (TSFMs) with Mistral Timestral | Playground Notebook & Benchmark |
 
 ---
 
