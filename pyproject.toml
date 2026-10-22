@@ -105,7 +105,8 @@ all = [
 testpaths = [
     "workshop_00_revising/tests",
     "workshop_01_ts_graphics/tests",
-    "workshop_02_decomposition/tests"
+    "workshop_02_decomposition/tests",
+    "workshop_03_benchmarks/tests"
 ]
 python_files = ["test_*.py"]
 addopts = "-v --tb=short"

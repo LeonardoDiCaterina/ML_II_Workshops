@@ -1,4 +1,4 @@
-.PHONY: help grade grade-all scaffold test test-00 test-01 test-02 test-solution-02 clean env install-core install-classical install-tabular install-dl install-prophet install-timestral install-all
+.PHONY: help grade grade-all scaffold test test-00 test-01 test-02 test-solution-02 test-03 test-solution-03 clean env install-core install-classical install-tabular install-dl install-prophet install-timestral install-all
 
 help:
 	@echo "Available commands:"
@@ -65,6 +65,12 @@ test-02:
 
 test-solution-02:
 	AUTOGRADE_TARGET=instructor pytest workshop_02_decomposition/tests/
+
+test-03:
+	pytest workshop_03_benchmarks/tests/
+
+test-solution-03:
+	AUTOGRADE_TARGET=instructor pytest workshop_03_benchmarks/tests/
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
