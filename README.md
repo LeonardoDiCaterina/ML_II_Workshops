@@ -147,7 +147,7 @@ Check the **Actions** tab on your GitHub repository. The autograder will run and
 | **02** | [`workshop_02_decomposition`](workshop_02_decomposition/) | Transformations, Classical & STL Decomposition | — | 0 | ⚪ Pending | — |
 | **03** | [`workshop_03_benchmarks`](workshop_03_benchmarks/) | Benchmarks, Diagnostics & Prediction Intervals | — | 0 | ⚪ Pending | — |
 | **04** | [`workshop_04_evaluation`](workshop_04_evaluation/) | Forecast Accuracy Metrics & Walk-Forward CV | — | 0 | ⚪ Pending | — |
-| **05** | `workshop_05_regression` | Time Series Regression & Spurious Correlation | — | 0 | ⚪ Pending | — |
+| **05** | [`workshop_05_regression`](workshop_05_regression/) | Time Series Regression & Spurious Correlation | — | 0 | ⚪ Pending | — |
 | **06** | `workshop_06_ets` | Exponential Smoothing & ETS Model Selection | — | 0 | ⚪ Pending | — |
 | **07** | `workshop_07_arima` | Stationarity, Differencing & ARIMA Identification | — | 0 | ⚪ Pending | — |
 | **08** | `workshop_08_advanced_arima` | Seasonal ARIMA, SARIMAX & Fourier Terms | — | 0 | ⚪ Pending | — |
