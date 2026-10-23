@@ -83,3 +83,7 @@ clean:
 	find . -type d -name ".pytest_cache" -exec rm -rf {} +
 	find . -type d -name ".ipynb_checkpoints" -exec rm -rf {} +
 	rm -rf build dist *.egg-info
+
+
+test-05:
+	pytest workshop_05_regression/tests/
